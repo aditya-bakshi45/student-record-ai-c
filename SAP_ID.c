@@ -188,6 +188,34 @@ void displayAll(void) {
     for (i = 0; i < count; i++) printTableRow(&students[i]);
 }
 
+void displayCGPAAll(void) {
+    int i;
+    if (count == 0) {
+        printf("No records available.\n");
+        return;
+    }
+    printf("%-10s %-20s %-5s\n", "SAP ID", "Name", "CGPA");
+    for (i = 0; i < count; i++)
+        printf("%-10ld %-20s %-5.2f\n", students[i].sap, students[i].name,
+               calculateCGPA(&students[i]));
+}
+
+void yearWiseAverage(void) {
+    int y, i;
+    for (y = 1; y <= 4; y++) {
+        float sum = 0.0f;
+        int n = 0;
+        for (i = 0; i < count; i++) {
+            if (students[i].year == y && students[i].sem > 0) {
+                sum += calculateCGPA(&students[i]);
+                n++;
+            }
+        }
+        if (n > 0) printf("Year %d: Average CGPA = %.2f (%d students)\n", y, sum / n, n);
+        else printf("Year %d: No students with SGPA data\n", y);
+    }
+}
+
 void deleteStudent(void) {
     long sap = readLong("Enter SAP ID to delete: ", 1, 999999999L);
     int idx = findBySap(sap), i;
@@ -198,6 +226,42 @@ void deleteStudent(void) {
     for (i = idx; i < count - 1; i++) students[i] = students[i + 1];
     count--;
     printf("Record deleted.\n");
+}
+
+/* case-insensitive name comparison */
+int compareNames(const char *a, const char *b) {
+    while (*a && *b) {
+        int ca = tolower((unsigned char)*a), cb = tolower((unsigned char)*b);
+        if (ca != cb) return ca - cb;
+        a++;
+        b++;
+    }
+    return tolower((unsigned char)*a) - tolower((unsigned char)*b);
+}
+
+/* mode 0 = sort by SAP ID, mode 1 = sort by Name (bubble sort on a copy) */
+void displaySorted(int mode) {
+    Student temp[MAX_STUDENTS], t;
+    int i, j;
+    if (count == 0) {
+        printf("No records available.\n");
+        return;
+    }
+    for (i = 0; i < count; i++) temp[i] = students[i];
+    for (i = 0; i < count - 1; i++) {
+        for (j = 0; j < count - 1 - i; j++) {
+            int swap;
+            if (mode == 0) swap = temp[j].sap > temp[j + 1].sap;
+            else swap = compareNames(temp[j].name, temp[j + 1].name) > 0;
+            if (swap) {
+                t = temp[j];
+                temp[j] = temp[j + 1];
+                temp[j + 1] = t;
+            }
+        }
+    }
+    printTableHeader();
+    for (i = 0; i < count; i++) printTableRow(&temp[i]);
 }
 
 /* 5 pre-loaded students so the program always has at least 5 records */
@@ -234,7 +298,11 @@ void showMenu(void) {
     printf(" 1. Add student\n");
     printf(" 2. Search student (by SAP ID)\n");
     printf(" 3. Display all students\n");
+    printf(" 4. Show CGPA of each student\n");
+    printf(" 5. Year-wise average CGPA\n");
     printf(" 6. Delete student\n");
+    printf(" 7. Display sorted by SAP ID\n");
+    printf(" 8. Display sorted by Name\n");
     printf(" 0. Exit\n");
 }
 
@@ -243,13 +311,17 @@ int main(void) {
     loadSampleData();
     do {
         showMenu();
-        choice = readInt("Enter your choice: ", 0, 6);
+        choice = readInt("Enter your choice: ", 0, 8);
         printf("\n");
         switch (choice) {
             case 1:  addStudent();      break;
             case 2:  searchStudent();   break;
             case 3:  displayAll();      break;
+            case 4:  displayCGPAAll();  break;
+            case 5:  yearWiseAverage(); break;
             case 6:  deleteStudent();   break;
+            case 7:  displaySorted(0);  break;
+            case 8:  displaySorted(1);  break;
             case 0:  printf("Thank you. Exiting...\n"); break;
         }
     } while (choice != 0);
