@@ -171,6 +171,13 @@ void addStudent(void) {
     printf("Student added successfully.\n");
 }
 
+void searchStudent(void) {
+    long sap = readLong("Enter SAP ID to search: ", 1, 999999999L);
+    int idx = findBySap(sap);
+    if (idx == -1) printf("Student not found.\n");
+    else printStudentFull(&students[idx]);
+}
+
 void displayAll(void) {
     int i;
     if (count == 0) {
@@ -179,6 +186,18 @@ void displayAll(void) {
     }
     printTableHeader();
     for (i = 0; i < count; i++) printTableRow(&students[i]);
+}
+
+void deleteStudent(void) {
+    long sap = readLong("Enter SAP ID to delete: ", 1, 999999999L);
+    int idx = findBySap(sap), i;
+    if (idx == -1) {
+        printf("Student not found.\n");
+        return;
+    }
+    for (i = idx; i < count - 1; i++) students[i] = students[i + 1];
+    count--;
+    printf("Record deleted.\n");
 }
 
 /* 5 pre-loaded students so the program always has at least 5 records */
@@ -213,7 +232,9 @@ void loadSampleData(void) {
 void showMenu(void) {
     printf("\n===== Student Record & Result Management System =====\n");
     printf(" 1. Add student\n");
+    printf(" 2. Search student (by SAP ID)\n");
     printf(" 3. Display all students\n");
+    printf(" 6. Delete student\n");
     printf(" 0. Exit\n");
 }
 
@@ -222,11 +243,13 @@ int main(void) {
     loadSampleData();
     do {
         showMenu();
-        choice = readInt("Enter your choice: ", 0, 3);
+        choice = readInt("Enter your choice: ", 0, 6);
         printf("\n");
         switch (choice) {
             case 1:  addStudent();      break;
+            case 2:  searchStudent();   break;
             case 3:  displayAll();      break;
+            case 6:  deleteStudent();   break;
             case 0:  printf("Thank you. Exiting...\n"); break;
         }
     } while (choice != 0);
