@@ -111,6 +111,33 @@ float calculateCGPA(const Student *s) {
     return sum / s->sem;
 }
 
+/* Part B: decision-making function using if-else */
+const char *getAdvice(float cgpa) {
+    if (cgpa >= 8.5f)
+        return "Excellent Performance - maintain your current study pattern.";
+    else if (cgpa >= 7.0f)
+        return "Good Performance - keep it up and try to push your CGPA higher.";
+    else if (cgpa >= 5.0f)
+        return "Needs Improvement - focus more on subjects with lower SGPA.";
+    else
+        return "Requires Immediate Attention - meet your faculty advisor and make a study plan now.";
+}
+
+void printAdvisor(const Student *s) {
+    float cgpa = calculateCGPA(s);
+    int i, low = 0;
+    printf("%ld | %-20s | CGPA: %.2f\n", s->sap, s->name, cgpa);
+    if (s->sem == 0) {
+        printf("  No SGPA available, so no advice can be generated.\n");
+        return;
+    }
+    printf("  Advice: %s\n", getAdvice(cgpa));
+    for (i = 1; i < s->sem; i++)
+        if (s->sgpa[i] < s->sgpa[low]) low = i;
+    if (cgpa < 7.0f)
+        printf("  Weakest semester: Sem %d (SGPA %.2f)\n", low + 1, s->sgpa[low]);
+}
+
 void printStudentFull(const Student *s) {
     int i;
     printf("----------------------------------------\n");
@@ -264,6 +291,22 @@ void displaySorted(int mode) {
     for (i = 0; i < count; i++) printTableRow(&temp[i]);
 }
 
+void advisorOne(void) {
+    long sap = readLong("Enter SAP ID for advice: ", 1, 999999999L);
+    int idx = findBySap(sap);
+    if (idx == -1) printf("Student not found.\n");
+    else printAdvisor(&students[idx]);
+}
+
+void advisorAll(void) {
+    int i;
+    if (count == 0) {
+        printf("No records available.\n");
+        return;
+    }
+    for (i = 0; i < count; i++) printAdvisor(&students[i]);
+}
+
 /* 5 pre-loaded students so the program always has at least 5 records */
 void addSample(long sap, const char *roll, const char *name, const char *phone,
                const char *email, int year, int sem, const float *sg) {
@@ -303,6 +346,8 @@ void showMenu(void) {
     printf(" 6. Delete student\n");
     printf(" 7. Display sorted by SAP ID\n");
     printf(" 8. Display sorted by Name\n");
+    printf(" 9. Academic Advisor (one student)\n");
+    printf("10. Academic Advisor (all students)\n");
     printf(" 0. Exit\n");
 }
 
@@ -311,7 +356,7 @@ int main(void) {
     loadSampleData();
     do {
         showMenu();
-        choice = readInt("Enter your choice: ", 0, 8);
+        choice = readInt("Enter your choice: ", 0, 10);
         printf("\n");
         switch (choice) {
             case 1:  addStudent();      break;
@@ -322,6 +367,8 @@ int main(void) {
             case 6:  deleteStudent();   break;
             case 7:  displaySorted(0);  break;
             case 8:  displaySorted(1);  break;
+            case 9:  advisorOne();      break;
+            case 10: advisorAll();      break;
             case 0:  printf("Thank you. Exiting...\n"); break;
         }
     } while (choice != 0);
