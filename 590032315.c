@@ -1,8 +1,9 @@
 /*
  * AI-Assisted Student Record and Result Management System
  * Course: Programming in C (PRC1001), UPES B.Tech CSE Sem I
- *
- * NOTE: Rename this file to <your SAP ID>.c before submitting.
+ *Name Aditya sharma
+ Sap ID 590032315
+ Batch No 20
  */
 #include <stdio.h>
 #include <stdlib.h>
