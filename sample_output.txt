@@ -1,0 +1,255 @@
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+SAP ID     Roll No.   Name                 Phone       Email                      Year Sem  CGPA 
+-------------------------------------------------------------------------------------------
+500091001  R2501001   Rohan Verma          9876543210  rohan@example.com          2    4    9.15 
+500091005  R2501005   Ananya Singh         9876543211  ananya@example.com         2    3    7.77 
+500091003  R2501003   Karan Mehta          9876543212  karan@example.com          3    6    6.20 
+500091009  R2501009   Neha Gupta           9876543213  neha@example.com           1    2    4.50 
+500091002  R2501002   Simran Kaur          9876543214  simran@example.com         4    8    8.60 
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Enter SAP ID: Enter Roll No.: Enter Name: Enter Phone No. (10 digits): Enter Email ID: Enter Year (1-4): Enter number of semesters completed (0-8): Enter SGPA of Semester 1: Student added successfully.
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Enter SAP ID to search: ----------------------------------------
+SAP ID   : 500091007
+Roll No. : R2501007
+Name     : Aditi Rao
+Phone    : 9876543299
+Email    : aditi@example.com
+Year     : 1
+Semesters completed: 1
+SGPA     : S1=7.40 S2=NA S3=NA S4=NA S5=NA S6=NA S7=NA S8=NA 
+CGPA     : 7.40
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+SAP ID     Name                 CGPA 
+500091001  Rohan Verma          9.15 
+500091005  Ananya Singh         7.77 
+500091003  Karan Mehta          6.20 
+500091009  Neha Gupta           4.50 
+500091002  Simran Kaur          8.60 
+500091007  Aditi Rao            7.40 
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Year 1: Average CGPA = 5.95 (2 students)
+Year 2: Average CGPA = 8.46 (2 students)
+Year 3: Average CGPA = 6.20 (1 students)
+Year 4: Average CGPA = 8.60 (1 students)
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+SAP ID     Roll No.   Name                 Phone       Email                      Year Sem  CGPA 
+-------------------------------------------------------------------------------------------
+500091001  R2501001   Rohan Verma          9876543210  rohan@example.com          2    4    9.15 
+500091002  R2501002   Simran Kaur          9876543214  simran@example.com         4    8    8.60 
+500091003  R2501003   Karan Mehta          9876543212  karan@example.com          3    6    6.20 
+500091005  R2501005   Ananya Singh         9876543211  ananya@example.com         2    3    7.77 
+500091007  R2501007   Aditi Rao            9876543299  aditi@example.com          1    1    7.40 
+500091009  R2501009   Neha Gupta           9876543213  neha@example.com           1    2    4.50 
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+SAP ID     Roll No.   Name                 Phone       Email                      Year Sem  CGPA 
+-------------------------------------------------------------------------------------------
+500091007  R2501007   Aditi Rao            9876543299  aditi@example.com          1    1    7.40 
+500091005  R2501005   Ananya Singh         9876543211  ananya@example.com         2    3    7.77 
+500091003  R2501003   Karan Mehta          9876543212  karan@example.com          3    6    6.20 
+500091009  R2501009   Neha Gupta           9876543213  neha@example.com           1    2    4.50 
+500091001  R2501001   Rohan Verma          9876543210  rohan@example.com          2    4    9.15 
+500091002  R2501002   Simran Kaur          9876543214  simran@example.com         4    8    8.60 
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Enter SAP ID for advice: 500091001 | Rohan Verma          | CGPA: 9.15
+  Advice: Excellent Performance - maintain your current study pattern.
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Enter SAP ID for advice: 500091009 | Neha Gupta           | CGPA: 4.50
+  Advice: Requires Immediate Attention - meet your faculty advisor and make a study plan now.
+  Weakest semester: Sem 2 (SGPA 4.20)
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+500091001 | Rohan Verma          | CGPA: 9.15
+  Advice: Excellent Performance - maintain your current study pattern.
+500091005 | Ananya Singh         | CGPA: 7.77
+  Advice: Good Performance - keep it up and try to push your CGPA higher.
+500091003 | Karan Mehta          | CGPA: 6.20
+  Advice: Needs Improvement - focus more on subjects with lower SGPA.
+  Weakest semester: Sem 2 (SGPA 6.00)
+500091009 | Neha Gupta           | CGPA: 4.50
+  Advice: Requires Immediate Attention - meet your faculty advisor and make a study plan now.
+  Weakest semester: Sem 2 (SGPA 4.20)
+500091002 | Simran Kaur          | CGPA: 8.60
+  Advice: Excellent Performance - maintain your current study pattern.
+500091007 | Aditi Rao            | CGPA: 7.40
+  Advice: Good Performance - keep it up and try to push your CGPA higher.
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Enter SAP ID to delete: Record deleted.
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+SAP ID     Roll No.   Name                 Phone       Email                      Year Sem  CGPA 
+-------------------------------------------------------------------------------------------
+500091001  R2501001   Rohan Verma          9876543210  rohan@example.com          2    4    9.15 
+500091005  R2501005   Ananya Singh         9876543211  ananya@example.com         2    3    7.77 
+500091009  R2501009   Neha Gupta           9876543213  neha@example.com           1    2    4.50 
+500091002  R2501002   Simran Kaur          9876543214  simran@example.com         4    8    8.60 
+500091007  R2501007   Aditi Rao            9876543299  aditi@example.com          1    1    7.40 
+
+===== Student Record & Result Management System =====
+ 1. Add student
+ 2. Search student (by SAP ID)
+ 3. Display all students
+ 4. Show CGPA of each student
+ 5. Year-wise average CGPA
+ 6. Delete student
+ 7. Display sorted by SAP ID
+ 8. Display sorted by Name
+ 9. Academic Advisor (one student)
+10. Academic Advisor (all students)
+ 0. Exit
+Enter your choice: 
+Thank you. Exiting...
